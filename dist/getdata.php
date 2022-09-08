@@ -16,6 +16,9 @@ if(isset($_POST['submit'])){
   else
   {
     $_SESSION['email'] = $email;
+    // $result = mysqli_fetch_assoc($result);
+    $_SESSION['user_id'] = $email;
+
     header("Location: ../product_summary.php");
   }
 }

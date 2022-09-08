@@ -1,8 +1,12 @@
 <?php
+include 'conn.php';
+include 'function.php';
+
+
 session_start();
 
 if (empty(isset($_SESSION["email"]))) {
-  header("Location:login.php");
+	header("Location:login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -117,31 +121,50 @@ if (empty(isset($_SESSION["email"]))) {
 							</ul>
 							<h3>  SHOPPING CART [ <small>3 Item(s) </small>]<a href="special_offer.php" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a></h3>	
 							<hr class="soft"/>
-
+							
 
 							<table class="table table-bordered">
 								<thead style="text-align:center;">
-									<tr>
-										<th style="text-align:center;">Product</th>
-										<th style="text-align:center;">Title</th>
-										<th style="text-align:center;">Quantity</th>
-										<th style="text-align:center;">Price</th>
-										<th style="text-align:center;">Total</th>
-										<th style="text-align:center;">Delete</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td style="text-align:center;"> <img width="60" src="themes/images/products/4.jpg" alt=""/></td>
-										<td style="text-align:center;">MASSA AST<br/>Color : black, Material : metal</td>
-										<td style="text-align:center;">
-											1
-										</td>
-										<td style="text-align:center;">$120.00</td>
-										<td style="text-align:center;">$25.00</td>
-										<td style="text-align: center">X</td>
-										
-									</tr>
+									<?php
+									$id = $_GET['id'];
+									$result = select("cart");
+
+									$sq = "SELECT * FROM `product` INNER JOIN `cart` ON product.`id` = cart.`id`";
+									$q = mysqli_query($conn, $sq);
+									$ql = "SELECT * FROM `cart` WHERE id = $id";
+									$result = mysqli_query($conn , $ql);
+
+									$fetch = mysqli_fetch_all($q, MYSQLI_ASSOC);
+
+									$total_bill = 0;
+									foreach($fetch as $res){ 
+										$total = [];
+										$total[] = $res
+										['price'] * $res['qty'];
+										$total_bill += $res['price'] * $res['qty'];
+										?>
+										<tr>
+											<th style="text-align:center;">Product</th>
+											<th style="text-align:center;">Title</th>
+											<th style="text-align:center;">Quantity</th>
+											<th style="text-align:center;">Price</th>
+											<th style="text-align:center;">Total</th>
+											<th style="text-align:center;">Delete</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td style="text-align:center;"> <img width="60" src="" alt=""/></td>
+											<td style="text-align:center;"><?php echo $res['name'];?></td>
+											<td style="text-align:center;">
+												<?php echo $res['qty']; ?>
+											</td>
+											<td style="text-align:center;"><?php echo $res['price']; ?></td>
+											<td style="text-align:center;"><?php echo $total[0]; ?></td>
+											<td style="text-align: center">X</td>
+
+										</tr>
+									<?php } ?>
 								</tbody>
 							</table>
 						</div>
