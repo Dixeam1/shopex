@@ -17,9 +17,8 @@ if(isset($_POST['submit'])){
   {
     $_SESSION['email'] = $email;
     // $result = mysqli_fetch_assoc($result);
-    $_SESSION['user_id'] = $email;
-
-    header("Location: ../product_summary.php");
+    $_SESSION['user_id'] = $user_id;
+    header("Location: ../Checkotut.php");
   }
 }
 ?>

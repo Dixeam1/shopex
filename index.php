@@ -44,109 +44,107 @@ include 'conn.php';
 	</head>
 	<body>
 		<div id="header">
-				
-				<!-- Navbar ================================================== -->
-				<div id="logoArea" class="navbar">
-					<a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
-					<div class="navbar-inner">
-						<a class="brand" href="index.php">
-							<h1 class="text-success">SHOPEX</h1></a>
-							<form class="form-inline navbar-search" style="margin-left: 100px;" method="post" action="products.html" >
-								<input id="srchFld" class="srchTxt" type="text" />
+			<div id="logoArea" class="navbar">
+				<a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<div class="navbar-inner">
+					<a class="brand" href="index.php">
+						<h1 class="text-success">SHOPEX</h1></a>
+						<form class="form-inline navbar-search" style="margin-left: 100px;" method="post" action="products.html" >
+							<input id="srchFld" class="srchTxt" type="text" />
 
-								<button type="submit" id="submitButton" class="btn btn-primary">Go</button>
-							</form>
-							<!-- <a href="product_summary.html" class=""><span class="btn btn-mini btn-primary mt-3"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes </span> </a> --> 
+							<button type="submit" id="submitButton" class="btn btn-primary">Go</button>
+						</form>
+						<!-- <a href="product_summary.html" class=""><span class="btn btn-mini btn-primary mt-3"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes </span> </a> --> 
 
-							<ul id="topMenu" class="nav pull-right">
-								<li class=""><a href="special_offer.php">Shop</a></li>
-								
-								<li class=""><a href="normal.html">Delivery</a></li>
-								<li class=""><a href="contact.html">Contact</a></li>
+						<ul id="topMenu" class="nav pull-right">
+							<li class=""><a href="special_offer.php">Shop</a></li>
+
+							<li class=""><a href="normal.html">Delivery</a></li>
+							<li class=""><a href="contact.html">Contact</a></li>
+
+
+							<li class="">
+								<a href="Checkotut.php" role="button" ><span class="btn btn-large btn-primary">
+									<i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes
+								</span></a></li>
+
 
 
 								<li class="">
-									<a href="product_summary.php" role="button" ><span class="btn btn-large btn-primary">
-										<i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes
-									</span></a></li>
-
-
-
-									<li class="">
-										<a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
-										<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-												<h3>Login Block</h3>
-											</div>
-											<div class="modal-body">
-												<form class="form-horizontal loginFrm">
-													<div class="control-group">								
-														<input type="text" id="inputEmail" placeholder="Email">
-													</div>
-													<div class="control-group">
-														<input type="password" id="inputPassword" placeholder="Password">
-													</div>
-													<div class="control-group">
-														<label class="checkbox">
-															<input type="checkbox"> Remember me
-														</label>
-													</div>
-												</form>		
-												<button type="submit" class="btn btn-success">Sign in</button>
-												<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-											</div>
+									<a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
+									<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h3>Login Block</h3>
 										</div>
-									</li>
-								</ul>
-							</div>
+										<div class="modal-body">
+											<form class="form-horizontal loginFrm">
+												<div class="control-group">								
+													<input type="text" id="inputEmail" placeholder="Email">
+												</div>
+												<div class="control-group">
+													<input type="password" id="inputPassword" placeholder="Password">
+												</div>
+												<div class="control-group">
+													<label class="checkbox">
+														<input type="checkbox"> Remember me
+													</label>
+												</div>
+											</form>		
+											<button type="submit" class="btn btn-success">Sign in</button>
+											<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+										</div>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<!-- Header End====================================================================== -->
-				<div id="carouselBlk">
-					<div id="myCarousel" class="carousel slide">
-						<img src="themes/images/1232.png" style="width:100%; height:410px">
-					</div>
-					<div id="mainBody">
-						<div class="container">
-							<div class="row">
-								<!-- Sidebar ================================================== -->
-								<div id="sidebar" class="span3">
+			</div>
+			<!-- Header End====================================================================== -->
+			<div id="carouselBlk">
+				<div id="myCarousel" class="carousel slide">
+					<img src="themes/images/1232.png" style="width:100%; height:410px">
+				</div>
+				<div id="mainBody">
+					<div class="container">
+						<div class="row">
+							<!-- Sidebar ================================================== -->
+							<div id="sidebar" class="span3">
 
-									<ul id="sideManu" class="nav nav-tabs nav-stacked">
-										<li class="subMenu open"><a> SMARTWATCH [230]</a>
+								<ul id="sideManu" class="nav nav-tabs nav-stacked">
+									<li class="subMenu open"><a> SMARTWATCH [230]</a>
 
-										</li>
-										<li class="subMenu"><a> LAPTOP [840] </a>
+									</li>
+									<li class="subMenu"><a> LAPTOP [840] </a>
 
-										</li>
-										<li class="subMenu"><a>MOBILES [1000]</a>
+									</li>
+									<li class="subMenu"><a>MOBILES [1000]</a>
 
-										</li>
+									</li>
 
-									</ul>
-									<br/>
-									<div class="thumbnail">
-										<img src="themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
-										<div class="caption">
-											<h5>Payment Methods</h5>
-										</div>
+								</ul>
+								<br/>
+								<div class="thumbnail">
+									<img src="themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
+									<div class="caption">
+										<h5>Payment Methods</h5>
 									</div>
 								</div>
-								<!-- Sidebar end=============================================== -->
-								
-								<div class="span9">		
-									<div class="well well-small">
-										<h4>Featured Products <small class="pull-right">200+ featured products</small></h4>
-										<div class="row-fluid">
-											<!--Slick Carousel Slider-->
-											<div class="main">
-												<div class="slider slider-for">
+							</div>
+							<!-- Sidebar end=============================================== -->
+
+							<div class="span9">		
+								<div class="well well-small">
+									<h4>Featured Products <small class="pull-right">200+ featured products</small></h4>
+									<div class="row-fluid">
+										<!--Slick Carousel Slider-->
+										<div class="main">
+											<div class="slider slider-for">
 													<!-- <div><h3>1</h3></div>
 													<div><h3>2</h3></div>
 													<div><h3>3</h3></div>
@@ -191,19 +189,19 @@ include 'conn.php';
 									<ul class="thumbnails">
 										<li class="span3">
 											<div class="thumbnail">
-												<a  href="product_details.html"><img src="themes/images/products/12.webp" alt=""/></a>
+												<a  href=""><img src="themes/images/products/12.webp" alt=""/></a>
 
 											</div>
 										</li>
 										<li class="span3">
 											<div class="thumbnail">
-												<a  href="product_details.html"><img src="themes/images/products/13.webp" alt=""/></a>
+												<a  href=""><img src="themes/images/products/13.webp" alt=""/></a>
 
 											</div>
 										</li>
 										<li class="span3">
 											<div class="thumbnail">
-												<a  href="product_details.html"><img src="themes/images/products/14.webp" alt=""/></a>
+												<a  href=""><img src="themes/images/products/14.webp" alt=""/></a>
 
 											</div>
 										</li>
@@ -318,5 +316,5 @@ include 'conn.php';
 					<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
 					<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
 				</script><script  src="bootstrap/js/script.js"></script>
-				</body>
-				</html>
+			</body>
+			</html>
