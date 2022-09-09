@@ -21,6 +21,7 @@ if (empty(isset($_SESSION["email"]))) {
 
 	<header>
 		<h3>Order Now</h3>
+		<a href="dist/logout.php">logout</a href="logout.php">
 	</header>
 
 	<main>
@@ -98,35 +99,40 @@ if (empty(isset($_SESSION["email"]))) {
 		<section class="checkout-details">
 			<div class="checkout-details-inner">
 				<div class="checkout-lists">
-					<div class="card">
-						<div class="card-image"><img src="https://rvs-checkout-page.onrender.com/photo1.png" alt=""></div>
-						<div class="card-details">
-							<div class="card-name">Vintage Backbag</div>
-							<div class="card-price">$54.99 <span>$94.99</span></div>
-							<div class="card-wheel">
-								<button>-</button>
-								<span>1</span>
-								<button>+</button>
+					<?php
+					// $id = $_Get['id'];
+					// echo $id; die();
+					$result = select("cart");
+
+					$sq = "SELECT * FROM `product` INNER JOIN `cart` ON product.`id` = cart.`id`";
+					$q = mysqli_query($conn, $sq);
+					// $ql = "SELECT * FROM `cart` WHERE id = '$id'";
+					// $result = mysqli_query($conn , $ql);
+
+					$fetch = mysqli_fetch_all($q, MYSQLI_ASSOC);
+
+					$total_bill = 0;
+					foreach($fetch as $res){ 
+						$total = [];
+						$total[] = $res
+						['price'] * $res['qty'];
+						$total_bill += $res['price'] * $res['qty'];
+						?>
+						<div class="card">
+							<div class="card-image"><img src="" alt=""></div>
+							<div class="card-details">
+								<div class="card-name">rth<h4></h4><?php echo $res['name']; ?></div>
+								<div class="card-price"><h4></h4><?php echo $res['qty']; ?></div>
+								<div class="card-price"><h4></h4><?php echo $res['price']; ?></div><div class="card-price"><h4></h4><?php echo $res['color']; ?></div>
+								<div class="card-price"><h4></h4><?php echo $total[0]; ?></div>
+
 							</div>
 						</div>
-					</div>
-					<div class="card">
-						<div class="card-image"><img src="https://rvs-checkout-page.onrender.com/photo2.png" alt=""></div>
-						<div class="card-details">
-							<div class="card-name">Levi Shoes</div>
-							<div class="card-price">$74.99 <span>$124.99</span></div>
-							<div class="card-wheel">
-								<button>-</button>
-								<span>1</span>
-								<button>+</button>
-							</div>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
-				
 				<div class="checkout-total">
 					<h2>Sub Total</h2>
-					<h2>$148.98</h2>
+					<h2>$0</h2>
 				</div>
 			</div>
 		</section>
@@ -134,7 +140,7 @@ if (empty(isset($_SESSION["email"]))) {
 	</main>
 
 	<footer>
-		
+
 	</footer>
 	<!-- partial -->
 

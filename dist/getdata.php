@@ -15,9 +15,10 @@ if(isset($_POST['submit'])){
   } 
   else
   {
+    $res = mysqli_fetch_assoc($result);
+    // echo $res['user_id']; die();
     $_SESSION['email'] = $email;
-    // $result = mysqli_fetch_assoc($result);
-    $_SESSION['user_id'] = $user_id;
+    $_SESSION['user_id'] = $res['user_id'];
     header("Location: ../Checkotut.php");
   }
 }

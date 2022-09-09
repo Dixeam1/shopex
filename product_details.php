@@ -163,7 +163,7 @@ session_start();
 				<input type="number" required class="span1" name="quantity" placeholder="Qty."/>
 				<input type="text" required class="span1" name="color" placeholder="Color."/>
 				<input type="hidden" class="w-50 border border-primary" name="pro_id" value="<?php echo $result['id']; ?>">
-				<input type="hidden" class="w-50 border border-primary" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+				
 				<button type="submit" name="addToCart" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
 			</div>
 		</div>
