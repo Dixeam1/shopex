@@ -111,10 +111,10 @@ if (empty(isset($_SESSION["email"]))) {
 					$result = select("cart");
 
 					$sq = "SELECT * FROM `product` INNER JOIN `cart` ON product.`id` = cart.`id`";
+					print_r($sq) ; die();
 					$q = mysqli_query($conn, $sq);
-					 // $ql = "SELECT * FROM `cart` WHERE id = '$id'";
-					// print_r($result) ; die();
-					// $result = mysqli_query($conn , $ql);
+					 $ql = "SELECT * FROM `cart` WHERE id = '$id'";
+					$result = mysqli_query($conn , $ql);
 
 					$fetch = mysqli_fetch_all($q, MYSQLI_ASSOC);
 
