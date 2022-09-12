@@ -207,7 +207,7 @@ include 'conn.php';
 										</li>
 
 									</ul>	
-									<h1 style="background-color: green; padding: 10px 0px; margin: 20px 0px; font-size: 30px;">
+									<h1 style="background-color: green; padding: 15px 30px; margin: 20px 0px; font-size: 30px; color: white;">
 										All Products
 									</h1>
 									<div class="tab-pane  active" id="blockView">

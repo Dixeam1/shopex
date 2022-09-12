@@ -12,13 +12,13 @@
 			"p_id" => $pro_id,
 			"color" => $color,
 			"qty" => $quantity,
-			"user_id" => $user_id,
-			// "status" => 0
+			"user_id" => $user_id
+		
 		];	
 		$result = insert("cart", $data);
-		
+		// print_r($result);   die();
 		$res = mysqli_query($conn, $result);
 
-		header("Location: index.php");
+		// header("Location: index.php");
 	} 
 ?>

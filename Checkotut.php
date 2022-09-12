@@ -20,8 +20,14 @@ if (empty(isset($_SESSION["email"]))) {
 <body>
 
 	<header>
-		<h3>Order Now</h3>
-		<a href="dist/logout.php">logout</a href="logout.php">
+		<li style="list-style: none; float: left;">
+			<h3>Order Now</h3>
+		</li >
+		<a  href="dist/logout.php" class="list-style" style="list-style: none; float: right;">
+	
+			logout
+		</a>
+		
 	</header>
 
 	<main>
@@ -106,7 +112,8 @@ if (empty(isset($_SESSION["email"]))) {
 
 					$sq = "SELECT * FROM `product` INNER JOIN `cart` ON product.`id` = cart.`id`";
 					$q = mysqli_query($conn, $sq);
-					// $ql = "SELECT * FROM `cart` WHERE id = '$id'";
+					 // $ql = "SELECT * FROM `cart` WHERE id = '$id'";
+					// print_r($result) ; die();
 					// $result = mysqli_query($conn , $ql);
 
 					$fetch = mysqli_fetch_all($q, MYSQLI_ASSOC);

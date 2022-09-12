@@ -19,6 +19,7 @@ if(isset($_POST['submit'])){
     // echo $res['user_id']; die();
     $_SESSION['email'] = $email;
     $_SESSION['user_id'] = $res['user_id'];
+    
     header("Location: ../Checkotut.php");
   }
 }
