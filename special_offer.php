@@ -175,7 +175,7 @@ include 'conn.php';
 												<h3>$ <?php echo $res['price']; ?></h3>
 
 												<a href="#" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a><br>
-												<a href="product_details.php" style="margin-top: 10px;" class="btn btn-large mt-3 btn-primary"> View Details</a>
+												<a href="product_details.php?id=<?php echo $res['id']?>" style="margin-top: 10px;" class="btn btn-large mt-3 btn-primary">View Details</a>
 												
 											</form>
 										</div>

@@ -118,12 +118,24 @@ session_start();
 							<div class="row">	  
 								<?php
 								$id = $_GET['id'];
+								$msg = '';
+								
+
 								$result = "SELECT * FROM `product` WHERE id = $id";
 								$sql = mysqli_query($conn, $result);
 								$res = mysqli_fetch_all($sql, MYSQLI_ASSOC);
 
 								foreach($res as $result){
 									?>
+									<div>
+										<?php 
+										if (!$msg = '') {
+												
+											echo $msg; 
+										}
+										?>
+
+									</div>
 									<div id="gallery" class="span3">
 										<a href="themes/images/" title="Fujifilm FinePix S2950 Digital Camera">
 											<img src="themes/images/<?php echo $result['images'] ?>" style="width:100%" alt="Fujifilm FinePix S2950 Digital Camera"/>

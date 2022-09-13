@@ -68,8 +68,11 @@ include 'conn.php';
 
 
 							<li class="">
-								<a href="Checkotut.php" role="button" ><span class="btn btn-large btn-primary">
-									<i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes
+								<a href="cart.php" role="button" ><span class="btn btn-large btn-primary">
+									<?php 
+										$result = select('cart'); 
+									 ?>
+									<i class="icon-shopping-cart icon-white"></i> <?php echo count($result); ?> Itemes
 								</span></a></li>
 
 
