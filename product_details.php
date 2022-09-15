@@ -63,10 +63,10 @@ session_start();
 							<li class=""><a href="normal.html">Delivery</a></li>
 							<li class=""><a href="contact.html">Contact</a></li>
 
-
+							<?php $result = select('cart'); ?>
 							<li class="">
-								<a href="product_summary.php" role="button" ><span class="btn btn-large btn-primary">
-									<i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes
+								<a href="cart.php" role="button" ><span class="btn btn-large btn-primary">
+									<i class="icon-shopping-cart icon-white"></i> <?php echo count($result); ?> Itemes
 								</span></a></li>
 
 
@@ -119,6 +119,7 @@ session_start();
 								<?php
 								$id = $_GET['id'];
 								$msg = '';
+								
 								
 
 								$result = "SELECT * FROM `product` WHERE id = $id";

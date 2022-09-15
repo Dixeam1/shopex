@@ -231,7 +231,7 @@ include 'conn.php';
 					
 				<?php } ?>	
 			</table>
-			<a class="Checkout" href="Checkotut.php">
+			<a class="Checkout" href="Checkotut.php?total=<?php echo $total_bill?>">
 				Now Checkout
 			</a>
 			<div class="total">

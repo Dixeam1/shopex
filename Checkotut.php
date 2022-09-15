@@ -1,3 +1,42 @@
+<?php
+include 'conn.php'; 
+include 'function.php'; 
+$bill = $_GET['total'];
+
+ if (isset($_POST['submit'])) {
+  // $qty= [];
+  // $p_id= [];
+  $sq = "SELECT * FROM `cart` INNER JOIN `product` ON cart.p_id = product.id";
+  $q = mysqli_query($conn, $sq); 
+  $fetch = mysqli_fetch_all($q, MYSQLI_ASSOC);
+  foreach ($fetch as $key => $val) {
+
+   // array_push($qty, $val['qty']);
+   // array_push($p_id, $val['product_id']);
+ }
+  // print_r($qty); die();
+ $data = [
+  'user_name' => $_POST['name'],
+  'email' => $_POST['email'],
+  'adress' => $_POST['address'],
+  'city' => $_POST['city'],
+  'phone' => $_POST['phone'],
+  'amount' => $_POST['amount'],
+  'amo_method' => $_POST['amo_method'],
+  // 'user_id' => $fetch['user_id'],
+  // 'user_id' => $fetch['qty'],
+
+  // 'p_id' => implode(",",$p_id),
+  // 'qty' => implode(",",$qty),
+  // 'user_id' => $fetch[0]['user_id']
+];
+$result = insert('orders', $data);
+$query = mysqli_query($conn,$result);
+// header('location: thanks.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -119,9 +158,9 @@
 </head>
 <body>
   <div class="cehck">
-      <h1>
-        Checkout
-      </h1>
+    <h1>
+      Checkout
+    </h1>
   </div>
 
   <div class="row">
@@ -133,7 +172,7 @@
             <div class="col-50">
               <h3>Billing Address</h3>
               <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-              <input required  type="text" id="fname" name="firstname" placeholder="John M. Doe">
+              <input required  type="text" id="fname" name="name" placeholder="John M. Doe">
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
               <input required  type="text" id="email" name="email" placeholder="john@example.com">
               <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
@@ -188,15 +227,14 @@
         </form>
       </div>
     </div>
+
+
     <div class="col-25">
       <div class="container">
-        <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-        <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-        <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-        <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-        <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+
         <hr>
-        <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+        <p>Total Bill <span class="price" style="color:black"><b>$<?php echo $bill; ?></b></span></p>
+        <hr>
       </div>
     </div>
   </div>
