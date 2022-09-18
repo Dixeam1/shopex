@@ -65,8 +65,8 @@ include 'conn.php';
 			}
 			.a{
 				color: #fff;
-				background-color: #ed6b75;
-				border-color: #ea5460;    
+				background-color: #ff6a00 !important;
+				border-color: #ff6a00 !important;    
 				font-weight: 400;
 				text-align: center; 
 				padding: 10px 20px; 
@@ -74,8 +74,8 @@ include 'conn.php';
 			}
 			.a:hover{
 				color: #fff;
-				background-color: #ed6b75;
-				border-color: #ea5460;    
+				background-color: #ff6a00 !important;
+				border-color: #ff6a00 !important;    
 				font-weight: 400;
 				text-align: center; 
 				padding: 10px 20px; 
@@ -96,8 +96,8 @@ include 'conn.php';
 			}
 			.Checkout{
 				color: #fff;
-				background-color: #006dcc;
-				border-color: #ea5460;
+				background-color: #ff6a00 !important;
+				border-color: #ff6a00 !important;
 				font-weight: 900;
 				text-align: center;
 				border-radius: 10px;
@@ -110,7 +110,7 @@ include 'conn.php';
 			}
 			.Checkout:hover{
 				color: #fff;
-				background-color: #005580;
+				background-color: #ff6a00 !important;
 				text-decoration: none;
 				border-color: #ea5460;
 				font-weight: 900;
