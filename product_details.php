@@ -173,11 +173,11 @@ session_start();
 	<form action="addToCart.php" method="post" class="form-horizontal qtyFrm">
 		<div class="control-group">
 			<div class="controls">
-				<input type="number" required class="span1" name="quantity" placeholder="Qty."/>
-				<input type="text" required class="span1" name="color" placeholder="Color."/>
+				<input style="border: 1px solid #ff6a00 !important;" type="number" required class="span1" name="quantity" placeholder="Qty."/>
+				<input style="border: 1px solid #ff6a00 !important;" type="text" required class="span1" name="color" placeholder="Color."/>
 				<input type="hidden" class="w-50 border border-primary" name="pro_id" value="<?php echo $result['id']; ?>">
 				
-				<button type="submit" name="addToCart" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
+				<button type="submit" name="addToCart" class="btn btn-large btn-primary pull-right" style="background:#ff6a00 !important;"> Add to cart <i class=" icon-shopping-cart"></i></button>
 			</div>
 		</div>
 	</form>
@@ -245,10 +245,10 @@ session_start();
 	
 	<div class="container">
 		<h4>Protection</h4>
-		<a class="" href="#" data-toggle="tooltip" data-placement="right" title="On-time dispatch is guaranteed or you will be eligible to claim platform compensation."><h5><i class="fad fa-arrow-alt-circle-right"></i> On-time Dispatch Guarantee</h5></a>
+		<a class="" href="#" data-toggle="tooltip" data-placement="right" title="On-time dispatch is guaranteed or you will be eligible to claim platform compensation."><h5 style="color: #ff6a00 !important;"><i class="fad fa-arrow-alt-circle-right"></i> On-time Dispatch Guarantee</h5></a>
 	</div>
 	<div class="container">
-		<a class="" href="#" data-toggle="tooltip" data-placement="right" title="If the shipment is delayed or product quality differs from what are specified in the online order, you can claim for a refund. Quick refund: If you can apply for a refund within two hours of making a payment, you will receive a refund immediately."><h5><i class="fad fa-arrow-alt-circle-right"></i> Refund Policy</h5></a>
+		<a class="" href="#" data-toggle="tooltip" data-placement="right" title="If the shipment is delayed or product quality differs from what are specified in the online order, you can claim for a refund. Quick refund: If you can apply for a refund within two hours of making a payment, you will receive a refund immediately."><h5 style="color: #ff6a00 !important;"><i class="fad fa-arrow-alt-circle-right"></i> Refund Policy</h5></a>
 	</div>
 	
 

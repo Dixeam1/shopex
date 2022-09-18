@@ -1,4 +1,7 @@
 <?php
+include 'conn.php';
+include 'function.php';
+
 session_start();
 
 if (empty(isset($_SESSION["username"]))) {
@@ -430,18 +433,29 @@ if (empty(isset($_SESSION["username"]))) {
                         <div class="col-sm-12">
                           <div class="statistics-details d-flex align-items-center justify-content-between">
                             <div class="bg-primary w-25 py-4 text-white font rounded">
+                              <?php 
+                              $result = select('product')
+                              ?>
+                              <p class="statistics-title text-white text-center font">Total Product</p>
+                              <h3 class="rate-percentage text-center text-white"><?php echo count($result); ?></h3>
+                            </div>
+                            <div class="bg-primary w-25 py-4 text-white font rounded">
 
                               <p class="statistics-title text-white text-center font">Total Earning</p>
                               <h3 class="rate-percentage text-center text-white"><span>$</span> 10000</h3>
                             </div>
+
                             <div class="bg-primary w-25 py-4 text-white rounded">
+                              <?php 
+                              // $result = select('order');
+                              ?>
                               <p class="statistics-title text-center text-white font">Total Order</p>
-                              <h3 class="rate-percentage text-center text-white">100</h3>
+                              <h3 class="rate-percentage text-center text-white"><?php echo count($result); ?></h3>
                             </div>
-                            <div class="bg-primary w-25 py-4 text-white rounded">
+                            <!-- <div class="bg-primary w-25 py-4 text-white rounded">
                               <p class="statistics-title text-center text-white font">Total Users</p>
                               <h3 class="rate-percentage text-center text-white">40</h3>
-                            </div>
+                            </div> -->
 
 
                           </div>

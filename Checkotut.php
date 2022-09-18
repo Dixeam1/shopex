@@ -223,7 +223,7 @@ $query = mysqli_query($conn,$result);
           <label>
             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
           </label>
-          <input type="submit" value="Continue to checkout" class="btn">
+          <input type="submit" value="Continue to checkout" class="btn" style="background: #ff6a00 !important;">
         </form>
       </div>
     </div>
