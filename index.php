@@ -30,7 +30,7 @@ include 'conn.php';
 		<!-- Google-code-prettify -->	
 		<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
 		<!-- fav and touch icons -->
-		<link rel="shortcut icon" href="themes/images/ico/favicon.ico">
+		<link rel="shortcut icon" href="themes/images/ico/favi.png">
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
@@ -74,18 +74,18 @@ include 'conn.php';
 
 						<div class="span9" style="width:100% !important;">		
 							<div class="well well-small" style="background: #ff6a00; border: #ff6a00; border-radius: 5px;">
-								<!-- <h4 style="color:white;">Featured Products <small class="pull-right">200+ featured products</small></h4> -->
+								
 								<div class="row-fluid">
 									<!--Slick Carousel Slider-->
 									<div class="main">
 										<div class="slider slider-for">
 										</div>
 										<div class="slider slider-nav">
-											<div><img style="width:100%; height:100%;" src="themes/images/4.jpg"></div>
-											<div><img style="width:100%; height:100%;" src="themes/images/H781f8f65e0d34e9291b93164832bd0879.jpg_960x960.webp"></div>
-											<div><img style="width:100%; height:100%;" src="themes/images/Hd406b89b73ed4f169a7bbeb6ae6bc87fz.jpg"></div>
-											<div><img style="width:100%; height:100%;" src="themes/images/H42f69faa752243d1af9dd8f1213b0bb0W.jpg"></div>
-											<div><img style="width:100%; height:100%;" src="themes/images/Hdad1b004941d46deb462a5073c21b0974.jpg_960x960.webp"></div>
+											<div><img style="width:50%;" src="themes/images/4.jpg"></div>
+											<div><img style="width:50%;" src="themes/images/H781f8f65e0d34e9291b93164832bd0879.jpg_960x960.webp"></div>
+											<div><img style="width:50%;" src="themes/images/Hd406b89b73ed4f169a7bbeb6ae6bc87fz.jpg"></div>
+											<div><img style="width:50%;" src="themes/images/H42f69faa752243d1af9dd8f1213b0bb0W.jpg"></div>
+											<div><img style="width:50%;" src="themes/images/Hdad1b004941d46deb462a5073c21b0974.jpg_960x960.webp"></div>
 										</div>
 									</div>
 
@@ -267,7 +267,7 @@ include 'conn.php';
 				All Products
 			</h1>
 			<div class="tab-pane  active" id="blockView">
-				<ul class="thumbnails" style="margin-left: -13px;">
+				<ul class="thumbnails" style="margin-left: -15px;">
 					<?php 
 					$result = select('product');
 					foreach ($result as $res) {
@@ -275,7 +275,7 @@ include 'conn.php';
 
 						?>
 						<li class="span3">
-							<div class="thumbnail">
+							<div class="thumbnail" style="box-shadow: 0px 0px 10px -3px black;">
 								<a href="product_details.php?id=<?php echo $res['id']?>"><img src="themes/images/<?php echo $res['images'];?>" alt=""/></a>
 								<div class="caption">
 									<h5 class="products_title font"><?php echo $res['name']; ?></h5>
