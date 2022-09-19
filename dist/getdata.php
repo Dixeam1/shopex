@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     $_SESSION['email'] = $email;
     $_SESSION['user_id'] = $res['user_id'];
     
-    header("Location: ../Checkotut.php");
+    header("Location: ../cart.php");
   }
 }
 ?>
