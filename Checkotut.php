@@ -157,6 +157,7 @@ $query = mysqli_query($conn,$result);
   </style>
 </head>
 <body>
+  <?php include 'layout.php'; ?>
   <div class="cehck">
     <h1>
       Checkout

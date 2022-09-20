@@ -1,6 +1,6 @@
 	<?php 
 	include 'conn.php';
-
+	include 'function.php';
 	?>
 	<!DOCTYPE html>
 	<html lang="en" >
@@ -11,9 +11,6 @@
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
 		<link rel="stylesheet" href="themes/layout/style.css">
 		<style>
-
-
-
 			.has-search .form-control {
 				padding-left: 2.375rem;
 			}
@@ -39,21 +36,22 @@
 			}
 
 
-
-
+			.navbars{
+				width: 80%important;
+			}
 		</style>
 	</head>
 	<body>
 		<!-- partial:index.partial.html -->
 		<body>	
 
-			<div class="navigation-wrap bg-light  start-header start-style">
-				<div class="container">
+			<div class="navigation-wrap bg-light  start-header start-style" style="">
+				<div class="container-fluid navbars" style="width: 90%">
 					<div class="row">
 						<div class="col-12">
 							<nav class="navbar navbar-expand-md navbar-light">
 
-								<a class="navbar-brand" href="#" target="_blank">
+								<a class="navbar-brand" href="index.php" target="_blank">
 									<h1 style="color: #ff6a00 !important;">ShopEX</h1>
 								</a>	
 
@@ -66,7 +64,10 @@
 										</button>
 									</div>
 								</div>
-
+								<?php 
+								$result = select('cart');
+								// echo count($result); 		
+								?>
 
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 									<span class="navbar-toggler-icon"></span>
@@ -80,17 +81,27 @@
 										</li>
 										<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 											<a class="nav-link" href="cart.php">
-												<i class="fas fa-shopping-cart"></i>
+												<i class="fas fa-shopping-cart" style="position: absolute;"></i><span style="    position: relative;
+												bottom: 16px;
+												right: -18px;"><?php echo count($result) ?></span>
 											</a>
 										</li>
-
-										<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+										<?php 
+										$result = select('wishlist');
+								// echo count($result); 		
+										?>
+										<li class="nav-item pl-5">
 											<a class="nav-link" href="#">
-												<i class="fas fa-heart"></i>
+												<i class="fas fa-heart" style="position: absolute;"></i><span style="    position: relative;
+												bottom: 16px;
+												right: -16px;"><?php echo count($result) ?></span>
 											</a>
 										</li>
 										<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 											<a class="nav-link" href="contact.php">Contact</a>
+										</li>
+										<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+											<a class="nav-link" href="dist/logout.php">Logout</a>
 										</li>
 									</ul>
 								</div>

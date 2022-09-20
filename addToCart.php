@@ -36,7 +36,7 @@ if (isset($_POST['addToCart'])) {
 		// print_r($result);   die();
 		$res = mysqli_query($conn, $result);
 
-		header("Location: index.php");
+		header("Location: product.php");
 
 	}
 } 
