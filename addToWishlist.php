@@ -4,8 +4,7 @@ include "function.php";
 session_start();
 
 if (isset($_POST['addToCart'])) {
-		$quantity = $_POST['quantity']; 
-		$color = $_POST['color'];	
+			
 		$pro_id = $_POST['pro_id']; 	
 		$user_id = $_SESSION['user_id']; 
 		$data = [
@@ -15,14 +14,10 @@ if (isset($_POST['addToCart'])) {
 			"userid" => $user_id
 
 		];	
-		// $result = insert("cart", $data);
-		// // print_r($result);   die();
-		// $res = mysqli_query($conn, $result);
-
-		// header("Location: index.php");
+		
 
 
-	$query = "SELECT * FROM `cart` WHERE p_id='$pro_id'";
+	$query = "SELECT * FROM `wishlist` WHERE p_id='$pro_id'";
 	$result = mysqli_query($conn, $query);
 
 	if(mysqli_num_rows($result) > 0)
@@ -32,11 +27,11 @@ if (isset($_POST['addToCart'])) {
 	}
 	else
 	{
-		$result = insert("cart", $data);
-		// print_r($result);   die();
+		$result = insert("wishlist", $data);
+		echo $result;   die();
 		$res = mysqli_query($conn, $result);
 
-		header("Location: cart.php");
+		header("Location: wishlist.php");
 
 	}
 } 

@@ -360,6 +360,18 @@ label.radio input:checked+span::before {
                         <div class="buttons"> 
                             <button class="btn text-white btn-outline-warning btn-long cart" name="addToCart" style="background:#ff6a00 !important;">Add to Cart</button> 
                             <button class="btn btn-warning btn-long buy">Buy it Now</button> 
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            <form action="addTowishlist.php" method="post" class="form-horizontal qtyFrm">
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="hidden" class="w-50 border border-primary" name="pro_id" value="<?php echo $result['id']; ?>">
+                        <div class="buttons"> 
+                           
                             <button class="btn wishlist" > 
                                 <i class="fa fa-heart"></i> 
                             </button> 
