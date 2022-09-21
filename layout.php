@@ -31,6 +31,11 @@
 				border: #ff6a00 !important;
 
 			}
+			.btn-secondary:hover{
+				background-color: ##8167a9; !important;
+				border: ##8167a9; !important;
+
+			}
 			.form-control{
 				border:1px solid #ff6a00 !important;
 			}
@@ -38,6 +43,9 @@
 
 			.navbars{
 				width: 80%important;
+			}
+			body{
+				font-family: 'Cairo', sans-serif;
 			}
 		</style>
 	</head>
@@ -90,7 +98,7 @@
 										$result = select('wishlist');
 								// echo count($result); 		
 										?>
-										<li class="nav-item pl-5">
+										<li class="nav-item nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 											<a class="nav-link" href="#">
 												<i class="fas fa-heart" style="position: absolute;"></i><span style="    position: relative;
 												bottom: 16px;

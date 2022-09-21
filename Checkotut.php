@@ -1,9 +1,9 @@
 <?php
 include 'conn.php'; 
-include 'function.php'; 
+// include 'function.php'; 
 $bill = $_GET['total'];
 
- if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
   // $qty= [];
   // $p_id= [];
   $sq = "SELECT * FROM `cart` INNER JOIN `product` ON cart.p_id = product.id";
@@ -13,27 +13,31 @@ $bill = $_GET['total'];
 
    // array_push($qty, $val['qty']);
    // array_push($p_id, $val['product_id']);
- }
+  }
   // print_r($qty); die();
- $data = [
-  'user_name' => $_POST['name'],
-  'email' => $_POST['email'],
-  'adress' => $_POST['address'],
-  'city' => $_POST['city'],
-  'phone' => $_POST['phone'],
-  'amount' => $_POST['amount'],
-  'amo_method' => $_POST['amo_method'],
+  $data = [
+    'user_name' => $_POST['name'],
+    'email' => $_POST['email'],
+    'adress' => $_POST['address'],
+    'city' => $_POST['city'],
+    'phone' => $_POST['phone'],
+    'amount' => $_POST['amount'],
+    'amo_method' => $_POST['amo_method'],
   // 'user_id' => $fetch['user_id'],
   // 'user_id' => $fetch['qty'],
 
   // 'p_id' => implode(",",$p_id),
   // 'qty' => implode(",",$qty),
   // 'user_id' => $fetch[0]['user_id']
-];
-$result = insert('orders', $data);
-$query = mysqli_query($conn,$result);
+  ];
+  $result = insert('orders', $data);
+  $query = mysqli_query($conn,$result);
 // header('location: thanks.php');
 }
+
+
+
+
 
 
 ?>
@@ -44,25 +48,7 @@ $query = mysqli_query($conn,$result);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
-    body {
-      font-family: Arial;
-      font-size: 17px;
-      padding: 8px;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    .row {
-      display: -ms-flexbox;  /*IE10*/ 
-      display: flex;
-      justify-content: center !important;
-      /*-ms-flex-wrap: wrap;  IE10 */*/
-      /*flex-wrap: wrap;*/
-      /*margin: 0 -16px;*/
-      width: 60%;
-    }
 
     .col-25 {
       -ms-flex: 25%; /* IE10 */
@@ -85,11 +71,8 @@ $query = mysqli_query($conn,$result);
       padding: 0 16px;
     }
 
-    .container {
+    .bg {
       background-color: #f2f2f2;
-      padding: 5px 20px 15px 20px;
-      border: 1px solid lightgrey;
-      border-radius: 3px;
     }
 
     input[type=text] {
@@ -105,11 +88,7 @@ $query = mysqli_query($conn,$result);
       display: block;
     }
 
-    .icon-container {
-      margin-bottom: 20px;
-      padding: 7px 0;
-      font-size: 24px;
-    }
+    
 
     .btn {
       background-color: #04AA6D;
@@ -146,99 +125,101 @@ $query = mysqli_query($conn,$result);
     }
 
     /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
-    @media (max-width: 800px) {
-      .row {
-        flex-direction: column-reverse;
-      }
-      .col-25 {
-        margin-bottom: 20px;
-      }
-    }
+    
   </style>
 </head>
 <body>
   <?php include 'layout.php'; ?>
-  <div class="cehck">
+  <div class="cehck mt-3">
     <h1>
       Checkout
     </h1>
   </div>
-
-  <div class="row">
-    <div class="col-75">
-      <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 border bg">
         <form action="" method="POST">
+          <h3>Billing Address</h3>
+          <label for="fname"> Full Name</label>
+          <input required  type="text" id="fname" name="name" placeholder="John M. Doe">
+          <label for="email"> Email</label>
+          <input required  type="text" id="email" name="email" placeholder="john@example.com">
+          <label for="adr"> Address</label>
+          <input required  type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+          <label for="city"> City</label>
+          <input required  type="text" id="city" name="city" placeholder="New York">
 
           <div class="row">
             <div class="col-50">
-              <h3>Billing Address</h3>
-              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-              <input required  type="text" id="fname" name="name" placeholder="John M. Doe">
-              <label for="email"><i class="fa fa-envelope"></i> Email</label>
-              <input required  type="text" id="email" name="email" placeholder="john@example.com">
-              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-              <input required  type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-              <label for="city"><i class="fa fa-institution"></i> City</label>
-              <input required  type="text" id="city" name="city" placeholder="New York">
-
-              <div class="row">
-                <div class="col-50">
-                  <label for="state">State</label>
-                  <input required  type="text" id="state" name="state" placeholder="NY">
-                </div>
-                <div class="col-50">
-                  <label for="zip">Zip</label>
-                  <input  required type="text" id="zip" name="zip" placeholder="10001">
-                </div>
-              </div>
+              <label for="state">State</label>
+              <input required  type="text" id="state" name="state" placeholder="NY">
             </div>
-
             <div class="col-50">
-              <h3>Payment</h3>
-              <label for="fname">Accepted Cards</label>
-              <div class="icon-container">
-                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                <i class="fa fa-cc-discover" style="color:orange;"></i>
-              </div>
-              <label for="cname">Name on Card</label>
-              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-              <label for="ccnum">Credit card number</label>
-              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-              <label for="expmonth">Exp Month</label>
-              <input type="text" id="expmonth" name="expmonth" placeholder="September">
-              <div class="row">
-                <div class="col-50">
-                  <label for="expyear">Exp Year</label>
-                  <input type="text" id="expyear" name="expyear" placeholder="2018">
-                </div>
-                <div class="col-50">
-                  <label for="cvv">CVV</label>
-                  <input type="text" id="cvv" name="cvv" placeholder="352">
-                </div>
-              </div>
+              <label for="zip">Zip</label>
+              <input  required type="text" id="zip" name="zip" placeholder="10001">
             </div>
-
           </div>
-          <label>
-            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-          </label>
+          <div class="row">
+            <div class="col-50">
+              <label for="state">Payment</label><br>
+              <input required  type="radio" id="state" value="cash on Dilivery" name="payment">
+              <label for="state">Cash on Dilivery</label>
+            </div>
+            <div class="col-50">
+              <input  required type="radio" id="zip" name="payment" placeholder="10001">
+              <label for="zip">Bank Transfer</label>
+            </div>
+          </div>
           <input type="submit" value="Continue to checkout" class="btn" style="background: #ff6a00 !important;">
         </form>
       </div>
-    </div>
 
-
-    <div class="col-25">
-      <div class="container">
-
+      <?php $result = SELECT('cart'); ?>
+      <div class="col-md-5 ml-5 border bg">
+        <b>Order Summary</b><br>
         <hr>
-        <p>Total Bill <span class="price" style="color:black"><b>$<?php echo $bill; ?></b></span></p>
+        <div class=""><?php echo count($result); ?> Items</div>
+        <?php 
+
+        $sql = "SELECT * FROM `product` INNER JOIN `cart` ON product.`id` = cart.`p_id`";
+        $sq = mysqli_query($conn, $sql);
+        $fetch = mysqli_fetch_all($sq, MYSQLI_ASSOC);
+        $result = select('cart');
+        $total_bill = 0;
+
+        foreach ($fetch as $res) {
+          $total = [];
+          $total[] = (float)$res['price'] * (float)$res['qty'];
+          $total_bill += (float)$res['price'] * (float)$res['qty']
+          ?>
+          <div class="mt-3 d-flex align-items-center">
+            <div class="w-25">
+              <img class="w-100" src="themes/images/<?php echo $res['images'];?>" alt="">
+            </div>
+            <div class="ml-3 w-100">
+              <span><b><?php echo $res['qty'];?>X</b></span><br>
+              <span class=""><?php echo $res['name']; ?> </span>
+            </div>
+            <div class="">
+              <p class=""><b><?php echo $res['price']; ?></b></p>
+            </div>
+            <div class="ml-3">
+              <p class=""><b>$<?php echo $total[0]; ?></b></p>
+            </div>
+          </div>
+        <?php } ?>
         <hr>
+        <span><b>Sub Total</b></span>
+        <span class="price" style="color:black">
+          <b>
+            $<?php echo $bill; ?>
+          </b>
+        </span>
       </div>
     </div>
   </div>
+
+
 
 </body>
 </html>

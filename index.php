@@ -36,6 +36,9 @@ include 'conn.php';
 			color: white;
 			line-height: 30px;
 		}
+		.content-details ul li{
+			font-size: 10px;
+		}
 	</style>
 </head>
 <body>
@@ -81,140 +84,73 @@ include 'conn.php';
 											<img style="width:100%;" src="themes/images/H42f69faa752243d1af9dd8f1213b0bb0W.jpg">
 										</div>
 										<div>
-											<img style="width:100%;" src="themes/images/Hdad1b004941d46deb462a5073c21b0974.jpg_960x960.webp"></div>
+											<img style="width:100%;" src="themes/images/Hdad1b004941d46deb462a5073c21b0974.jpg_960x960.webp">
 										</div>
 									</div>
+								</div>
 
+							</div>
+						</div>
+
+						<div class="container mt-5">
+							<div class=" row" >
+								<div class="col-md-4 thumb ">
+									<h5 class=" font">Safe and Redivable Payment</h5>
+								</div>
+
+
+
+								<div class="col-md-4 thumb">
+									<h5 class=" font">					
+										Money Back Guarantee
+									</h5>
+								</div>
+
+
+
+								<div class="col-md-4 thumb">
+									<h5 class="font">
+										24/7 Customer Service
+									</h5>
 								</div>
 							</div>
 
-							<div class="container mt-5">
-								<div class=" row" >
-									<div class="col-md-4 thumb ">
-										<h5 class=" font">Safe and Redivable Payment</h5>
-									</div>
+
+
+							<h2 style="font-style: italic; font-size: 50px;margin-bottom: 22px; margin-top: 50px;">Trade  <span style="color:#ff6a00;">services</span>  </h2>
+							<h6 style="    font-size: 21px; margin-bottom: 40px;">Shopex.com's trade services help ensure that your purchases are protected.</h6>
 
 
 
-									<div class="col-md-4 thumb">
-										<h5 class=" font">					
-											Money Back Guarantee
-										</h5>
-									</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="content">
+											<a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+												<div class="content-overlay"></div>
+												<img style="height: 140px;" class="content-image" src="themes/images/1.webp">
+												<div class="content-details fadeIn-top">
+													<ul>
 
+														<li>
+															On-time shipping
+														</li>
 
+														<li>
+															Quality protection
+														</li>
 
-									<div class="col-md-4 thumb">
-										<h5 class="font">
-											24/7 Customer Service
-										</h5>
-									</div>
-								</div>
+													</ul>
+												</div>
+											</a>
 
-
-
-								<h2 style="font-style: italic; font-size: 50px;margin-bottom: 22px; margin-top: 50px;">Trade  <span style="color:#ff6a00;">services</span>  </h2>
-								<h6 style="    font-size: 21px; margin-bottom: 40px;">Shopex.com's trade services help ensure that your purchases are protected.</h6>
-
-
-
-								<div class="container">
-									<div class="row">
-										<div class="col-md-3">
-											<div class="content">
-												<a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
-													<div class="content-overlay"></div>
-													<img style="height: 140px;" class="content-image" src="themes/images/1.webp">
-													<div class="content-details fadeIn-top">
-														<ul>
-
-															<li>
-																On-time shipping
-															</li>
-
-															<li>
-																Quality protection
-															</li>
-
-														</ul>
-													</div>
-												</a>
-
-											</div>
-											<div class="font">
-												<p>
-													Trade Assurance 
-												</p>
-												<p style=" font-size: 13px;">
-													ORDER PROTECTION
-												</p>
-											</div>
 										</div>
-										<div class="col-md-3">
-											<div class="content">
-												<a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
-													<div class="content-overlay"></div>
-													<img  style="height: 140px;" class="content-image" src="themes/images/2.webp">
-													<div class="content-details fadeIn-top">
-														<ul>
-
-															<li>
-																Global online payment
-															</li>
-
-															<li>
-																Security compliance
-															</li>
-
-															<li>
-																provide online refund if goods <br> is not shipped
-															</li>
-
-														</ul>
-
-													</div>
-												</a>
-											</div>
-											<div class="font">
-												<p>
-													Payment
-												</p>
-												<p style=" font-size: 13px;">
-													PAYMENT SOLUTION
-												</p>
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="content">
-												<a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
-													<div class="content-overlay"></div>
-													<img  style="height: 140px;" class="content-image" src="themes/images/3.webp">
-													<div class="content-details fadeIn-top">
-														<ul>
-
-															<li>
-																Production monitoring
-															</li>
-
-															<li>
-																On-site factory check
-															</li>
-
-															<li>
-																Reduced risks in delays and <br>product conformity
-															</li>
-
-														</ul>
-													</div>
-												</a>
-											</div>
-											<div class="font" style="margin:10px 0 0 12px;">
-												<p style="font-size: 18px;
-												font-weight: bolder;">
-												Inspection Solution
+										<div class="font">
+											<p class="font-weight-bold">
+												Trade Assurance 
 											</p>
-											<p style="margin-top: 10px; font-size: 13px;">
-												INSPECTION
+											<p style=" font-size: 13px;">
+												ORDER PROTECTION
 											</p>
 										</div>
 									</div>
@@ -222,83 +158,150 @@ include 'conn.php';
 										<div class="content">
 											<a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
 												<div class="content-overlay"></div>
-												<img  style="height: 140px;" class="content-image" src="themes/images/4.webp">
+												<img  style="height: 140px;" class="content-image" src="themes/images/2.webp">
 												<div class="content-details fadeIn-top">
 													<ul>
 
 														<li>
-															Fast ocean and air shipping
-														</li>
-
-														<li >
-															Competitive prices
+															Global online payment
 														</li>
 
 														<li>
-															Online tracking
+															Security compliance
+														</li>
+
+														<li>
+															provide online refund if goods <br> is not shipped
 														</li>
 
 													</ul>
-
 
 												</div>
 											</a>
 										</div>
 										<div class="font">
-											<p>
-												Ocean and air shipping
+											<p class="font-weight-bold">
+												Payment
 											</p>
 											<p style=" font-size: 13px;">
-												LOGISTICS SERVICE
+												PAYMENT SOLUTION
 											</p>
 										</div>
 									</div>
-								</div>
-							</div>
+									<div class="col-md-3">
+										<div class="content">
+											<a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+												<div class="content-overlay"></div>
+												<img  style="height: 140px;" class="content-image" src="themes/images/3.webp">
+												<div class="content-details fadeIn-top">
+													<ul>
 
+														<li>
+															Production monitoring
+														</li>
 
-							<h1 class="all_pro font">
-								All Products
-							</h1>
-							<div class="container mt-5">
-								<div class="row">
-									<?php 
-									$result = select('product');
-									foreach ($result as $res) {
+														<li>
+															On-site factory check
+														</li>
 
+														<li>
+															Reduced risks in delays and <br>product conformity
+														</li>
 
-										?>
-										<div class="col-md-3">
-											<a class="" style="color:#ff6a00; text-decoration: none; " href="product.php?id=<?php echo $res['id']?>
-											">
-												<div class="">
-													<img class="w-100" src="themes/images/<?php echo $res['images'];?>" alt=""/>
+													</ul>
 												</div>
-
-												<div class="caption">
-													<h5 class="products_title font"><?php echo $res['name']; ?></h5>
-
-													<h4 class="products_price font py-2">
-														&dollar;<?php echo $res['price']; ?></h4>
-													</div>
-												</a>
-											</div>
-										<?php } ?>
+											</a>
+										</div>
+										<div class="font">
+											<p class="font-weight-bold">
+											Inspection Solution
+										</p>
+										<p style=" font-size: 13px;">
+											INSPECTION
+										</p>
 									</div>
 								</div>
+								<div class="col-md-3">
+									<div class="content">
+										<a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+											<div class="content-overlay"></div>
+											<img  style="height: 140px;" class="content-image" src="themes/images/4.webp">
+											<div class="content-details fadeIn-top">
+												<ul>
+
+													<li>
+														Fast ocean and air shipping
+													</li>
+
+													<li >
+														Competitive prices
+													</li>
+
+													<li>
+														Online tracking
+													</li>
+
+												</ul>
 
 
-
-
-
-
-
-
-							
+											</div>
+										</a>
+									</div>
+									<div class="font">
+										<p class="font-weight-bold">
+											Ocean and air shipping
+										</p>
+										<p style=" font-size: 13px;">
+											LOGISTICS SERVICE
+										</p>
+									</div>
+								</div>
 							</div>
-							<!-- <span id="themesBtn"></span> -->
-							<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-							<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
-						</script><script  src="bootstrap/js/script.js"></script>
-					</body>
-					</html>
+						</div>
+
+
+						<h1 class="all_pro font">
+							All Products
+						</h1>
+						<div class="container mt-5">
+							<div class="row">
+								<?php 
+								$result = select('product');
+								foreach ($result as $res) {
+
+
+									?>
+									<div class="col-md-3">
+										<a class="" style="color:#ff6a00; text-decoration: none; " href="product.php?id=<?php echo $res['id']?>
+										">
+										<div class="">
+											<img class="w-100" src="themes/images/<?php echo $res['images'];?>" alt=""/>
+										</div>
+
+										<div class="caption">
+											<h5 class="products_title font"><?php echo $res['name']; ?></h5>
+
+											<h4 class="products_price font py-2">
+												&dollar;<?php echo $res['price']; ?></h4>
+											</div>
+										</a>
+									</div>
+								<?php } ?>
+							</div>
+						</div>
+
+
+
+
+
+
+
+
+						
+					</div>
+					<!-- <span id="themesBtn"></span> -->
+					<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+					<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
+				</script><script  src="bootstrap/js/script.js"></script>
+			</body>
+			</html>

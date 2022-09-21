@@ -1,5 +1,4 @@
 <?php 
-include 'function.php';
 include 'conn.php';
 session_start();
 ?>
@@ -22,7 +21,7 @@ session_start();
 		@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
 
-       body{
+     body{
 
         background-color: #eee;
         font-family: "Poppins", sans-serif
@@ -259,12 +258,15 @@ label.radio input:checked+span::before {
 .card-body {
     padding: 0.3rem 0.3rem 0.2rem
 }
+.margin{
+    margin-top: 130px;
+}
 </style>
 </head>
 <body>
 
-    <?php 
-    ?>
+    <?php include 'layout.php'; ?>
+    
 
     <?php
     $id = $_GET['id'];
@@ -279,73 +281,76 @@ label.radio input:checked+span::before {
     foreach($res as $result){
         ?>
 
-        <div class="container-fluid mt-2 mb-3"> 
-         <div class="row no-gutters"> 
-          <div class="col-md-5 pr-2"> 
-           <div class="card"> 
-            <div class="demo"> 
-             <ul id="lightSlider">
-                <li data-thumb="themes/images/<?php echo $result['images'];?>"> 
-                    <img src="themes/images/<?php echo $result['images'];?>" /> 
-                </li> 
-                <li data-thumb="themes/images/<?php echo $result['image1'];?>"> 
-                    <img src="themes/images/<?php echo $result['image1'];?>" /> 
-                </li> 
-                <li data-thumb="themes/images/<?php echo $result['image2'];?>"> 
-                    <img src="themes/images/<?php echo $result['image2'];?>" /> 
-                </li> 
-            </ul>
-        <?php } ?>
-    </div> 
-</div> 
-<div class="card mt-2"> 
-  <hr> <div class="comment-section"> 
-    <div class="d-flex justify-content-between align-items-center"> 
-        <div class="d-flex flex-row align-items-center"> 
-            <img src="https://i.imgur.com/o5uMfKo.jpg" class="rounded-circle profile-image" > 
-            <div class="d-flex flex-column ml-1 comment-profile"> 
-                <div class="comment-ratings"> 
-                    <i class="fa fa-star"></i> 
-                    <i class="fa fa-star"></i> 
-                    <i class="fa fa-star"></i> 
-                    <i class="fa fa-star"></i> 
-                </div> 
-                <span class="username">Lori Benneth</span> 
+        <div class="container-fluid margin mb-3"> 
+           <div class="row no-gutters"> 
+              <div class="col-md-5 pr-2"> 
+                 <div class="card"> 
+                    <div class="demo"> 
+                       <ul id="lightSlider">
+                        <li data-thumb="themes/images/<?php echo $result['images'];?>"> 
+                            <img src="themes/images/<?php echo $result['images'];?>" /> 
+                        </li> 
+                        <li data-thumb="themes/images/<?php echo $result['image1'];?>"> 
+                            <img src="themes/images/<?php echo $result['image1'];?>" /> 
+                        </li> 
+                        <li data-thumb="themes/images/<?php echo $result['image2'];?>"> 
+                            <img src="themes/images/<?php echo $result['image2'];?>" /> 
+                        </li> 
+                    </ul>
+                <?php } ?>
             </div> 
         </div> 
-        <div class="date"> 
-            <span class="text-muted">2 May</span> 
-        </div> 
-    </div> 
-    <hr> 
-    <div class="d-flex justify-content-between align-items-center"> 
-        <div class="d-flex flex-row align-items-center"> 
-            <img src="https://i.imgur.com/tmdHXOY.jpg" class="rounded-circle profile-image" > 
-            <div class="d-flex flex-column ml-1 comment-profile"> 
-                <div class="comment-ratings"> 
-                    <i class="fa fa-star"></i> 
-                    <i class="fa fa-star"></i> 
-                    <i class="fa fa-star"></i> 
-                    <i class="fa fa-star"></i> 
+        <div class="card mt-2"> 
+          <hr> <div class="comment-section"> 
+            <div class="d-flex justify-content-between align-items-center"> 
+                <div class="d-flex flex-row align-items-center"> 
+                    <img src="https://i.imgur.com/o5uMfKo.jpg" class="rounded-circle profile-image" > 
+                    <div class="d-flex flex-column ml-1 comment-profile"> 
+                        <div class="comment-ratings"> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                        </div> 
+                        <span class="username">Lori Benneth</span> 
+                    </div> 
                 </div> 
-                <span class="username">Timona Simaung</span> 
+                <div class="date"> 
+                    <span class="text-muted">2 May</span> 
+                </div> 
             </div> 
-        </div> 
-        <div class="date"> 
-            <span class="text-muted">12 May</span> 
-        </div> 
+            <hr> 
+            <div class="d-flex justify-content-between align-items-center"> 
+                <div class="d-flex flex-row align-items-center"> 
+                    <img src="https://i.imgur.com/tmdHXOY.jpg" class="rounded-circle profile-image" > 
+                    <div class="d-flex flex-column ml-1 comment-profile"> 
+                        <div class="comment-ratings"> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                        </div> 
+                        <span class="username">Timona Simaung</span> 
+                    </div> 
+                </div> 
+                <div class="date"> 
+                    <span class="text-muted">12 May</span> 
+                </div> 
+            </div> 
+        </div>
+        <!-- Review end -->
+        <?php echo $result['name']; ?>
     </div> 
-</div>
-<!-- Review end -->
-<?php echo $result['name']; ?>
-</div> 
 </div> 
 <div class="col-md-7"> 
     <div class="card"> 
         <div class="about  py-3"> 
             <span class="font-weight-bold"><?php echo $result['name']; ?> </span> 
-            <h4 class="font-weight-bold py-3"> $<?php echo $result['price']; ?></h4> </div> 
 
+            <h4 class="font-weight-bold py-3"> $<?php echo $result['price']; ?></h4> </div> 
+            <p class="" style="text-align: left;">
+                <?php echo $result['description']?>
+            </p>
             <hr> 
             <div class="font-weight-bold"> 
                 <span>Color: </span>
@@ -371,7 +376,7 @@ label.radio input:checked+span::before {
                     <div class="controls">
                         <input type="hidden" class="w-50 border border-primary" name="pro_id" value="<?php echo $result['id']; ?>">
                         <div class="buttons"> 
-                           
+
                             <button class="btn wishlist" > 
                                 <i class="fa fa-heart"></i> 
                             </button> 
@@ -381,10 +386,7 @@ label.radio input:checked+span::before {
                 </div>
             </form>
             <hr>
-            <p>
-                <?php echo $result['description'] ?>
-
-            </p>
+            
             <div class="container">
                 <table class="table table-bordered">
                     <thead>
