@@ -1,16 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-}
-.container {
-  width: 45%;
-  margin: 0 auto;
-}
-.container h1 {
-  font-weight: bold;
-}
+
 
 .quantity-control {
   display: flex;
@@ -21,7 +9,7 @@ body {
   background: #eaeaea;
   border-radius: 10px;
   padding: 1rem 0.4rem;
-  margin-top: 4rem;
+
 }
 
 .quantity-btn {

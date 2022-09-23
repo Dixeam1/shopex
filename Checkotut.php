@@ -1,12 +1,11 @@
 <?php
 include 'conn.php'; 
-// include 'function.php'; 
-$bill = $_GET['total'];
 
 if (isset($_POST['submit'])) {
   // $qty= [];
   // $p_id= [];
   $sq = "SELECT * FROM `cart` INNER JOIN `product` ON cart.p_id = product.id";
+  print_r($sq); die();
   $q = mysqli_query($conn, $sq); 
   $fetch = mysqli_fetch_all($q, MYSQLI_ASSOC);
   foreach ($fetch as $key => $val) {
@@ -23,14 +22,15 @@ if (isset($_POST['submit'])) {
     'phone' => $_POST['phone'],
     'amount' => $_POST['amount'],
     'amo_method' => $_POST['amo_method'],
-  // 'user_id' => $fetch['user_id'],
-  // 'user_id' => $fetch['qty'],
+  'user_id' => $fetch['user_id'],
+  'user_id' => $fetch['qty'],
 
-  // 'p_id' => implode(",",$p_id),
-  // 'qty' => implode(",",$qty),
-  // 'user_id' => $fetch[0]['user_id']
+  'p_id' => implode(",",$p_id),
+  'qty' => implode(",",$qty),
+  'user_id' => $fetch[0]['user_id']
   ];
   $result = insert('orders', $data);
+  print_r($result); die();
   $query = mysqli_query($conn,$result);
 // header('location: thanks.php');
 }
@@ -210,9 +210,9 @@ if (isset($_POST['submit'])) {
         <?php } ?>
         <hr>
         <span><b>Sub Total</b></span>
-        <span class="price" style="color:black">
+        <span class="price" name="total" style="color:black">
           <b>
-            $<?php echo $bill; ?>
+            $<?php echo $total_bill; ?>
           </b>
         </span>
       </div>

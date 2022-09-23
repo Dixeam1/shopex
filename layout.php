@@ -1,5 +1,4 @@
-	<?php 
-	include 'conn.php';
+	<?php
 	include 'function.php';
 	?>
 	<!DOCTYPE html>
