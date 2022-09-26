@@ -271,7 +271,7 @@ include 'conn.php';
 
 
 									?>
-									<div class="col-md-3">
+									<div class="col-md-3" style="" >
 										<a class="" style="color:#ff6a00; text-decoration: none; " href="product.php?id=<?php echo $res['id']?>
 										">
 										<div class="">

@@ -112,7 +112,7 @@
 				</div>
 				<hr>
 				<div class="d-flex justify-content-center">
-					<a href="checkotut.php"
+					<a href="checkotut.php?total=<?php echo $total_bill; ?>"
 					 
 					class="my-4 text-white w-100">
 						<button class="btn text-white w-100" style="background-color:#ff6a00;">

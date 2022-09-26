@@ -58,7 +58,7 @@
 						<div class="col-12">
 							<nav class="navbar navbar-expand-md navbar-light">
 
-								<a class="navbar-brand" href="index.php" target="_blank">
+								<a class="navbar-brand" href="index.php">
 									<h1 style="color: #ff6a00 !important;">ShopEX</h1>
 								</a>	
 
@@ -98,7 +98,7 @@
 								// echo count($result); 		
 										?>
 										<li class="nav-item nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-											<a class="nav-link" href="#">
+											<a class="nav-link" href="wishlist.php">
 												<i class="fas fa-heart" style="position: absolute;"></i><span style="    position: relative;
 												bottom: 16px;
 												right: -16px;"><?php echo count($result) ?></span>

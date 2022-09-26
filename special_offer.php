@@ -6,147 +6,145 @@ include 'layout.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" type="text/css" href="vendors/css/style1.css">
+	
 	<meta charset="utf-8">
 	<title>Bootshop online Shopping cart</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<!--Less styles -->
-   <!-- Other Less css file //different less files has different color scheam
-	<link rel="stylesheet/less" type="text/css" href="themes/less/simplex.less">
-	<link rel="stylesheet/less" type="text/css" href="themes/less/classified.less">
-	<link rel="stylesheet/less" type="text/css" href="themes/less/amelia.less">  MOVE DOWN TO activate
--->
-	<!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
-		<script src="themes/js/less.js" type="text/javascript"></script> -->
+	
+	<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="themes/images/ico/favicon.ico">
 
-		<!-- Bootstrap style --> 
-		<link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
-		<link href="themes/css/base.css" rel="stylesheet" media="screen"/>
-		<!-- Bootstrap style responsive -->	
-		<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-		<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
-		<!-- Google-code-prettify -->	
-		<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
-		<!-- fav and touch icons -->
-		<link rel="shortcut icon" href="themes/images/ico/favicon.ico">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
-		<style type="text/css" id="enject"></style>
-	</head>
-	<body>
-		<div id="mainBody">
-			<div class="container" style="margin-top: 140px;">
-				<div class="row">
-					<div class="col-md-12">
-						<h4> 20% Discount Special offer<small class="pull-right"> 40 products are available </small></h4>	
-						<hr class="soft"/>
-						<form class="form-horizontal span6">
-							<div class="control-group">
-								<label class="control-label alignL">Sort By </label>
-								<select>
-									<option>Priduct name A - Z</option>
-									<option>Priduct name Z - A</option>
-									<option>Priduct Stoke</option>
-									<option>Price Lowest first</option>
-								</select>
-							</div>
-						</form>
+	<style type="text/css" id="enject">
+		.text-orange{
+			color: #ff6a00;
+		}
+		.bg-orange{
+			background-color: #ff6a00;
+		}
+	</style>
+</head>
+<body>
+	<?php 
+	$result = select('product');
+
+	?>
+	<div class="container" style="margin-top: 140px;">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h4 class=""> 
+					<span class="float-left" style="color: #ff6a00;">
+						20% Discount Special offer
+					</span>
+					<small class="float-right" style="color: #ff6a00;"> 
+						<span class="text-bold">
+							<?php echo count($result); ?>
+						</span>
+						products are available 
+					</small>
+				</h4>	
+				<hr class="mt-4">
+				<form class="form-horizontal span6">
+					<div class="control-group">
+						<label class="control-label alignL" style="color: #ff6a00;">Sort By </label>
+						<select style="color: #ff6a00; border:1px solid #ff6a00;">
+							<option>Priduct name A - Z</option>
+							<option>Priduct name Z - A</option>
+							<option>Priduct Stoke</option>
+							<option>Price Lowest first</option>
+						</select>
 					</div>
-				</div>
+				</form>
 			</div>
-			<div id="myTab" class="pull-right">
-				<a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
-				<a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
-			</div>
-			<br class="clr"/>
-			<div class="tab-content">
-				<div class="tab-pane" id="listView">
-					<?php 
+		</div>
+	</div>
 
-					$result = select('product');
-					foreach ($result as $res) {
+	<div class="container my-5 ">
+		<a class="float-right" data-toggle="tab" onclick="listView()"><span class="btn btn-large bg-orange text-white"><i class="icon-list"></i></span></a><br>
+		<div class="tab-content my-5">
+			<div class="tab-pane" id="listView">
+				<?php 
 
-						?>
-						<div class="row">	  
-							<div class="span2">
-								<img src="themes/images/<?php echo $res['images'] ?>" alt=""/>
-							</div>
-							<div class="span4">
-								<h3>New | Available</h3>				
-								<hr class="soft"/>
-								<h5><?php echo $res['name']; ?> </h5>
+				$result = select('product');
+				foreach ($result as $res) {
 
+					?>
+					<div class="row">	  
 
-								<br class="clr"/>
-							</div>
-							<div class="span3 alignR">
-								<form class="form-horizontal qtyFrm">
-									<h3>$ <?php echo $res['price']; ?></h3>
-
-									<a href="#" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a><br>
-									<a href="product_details.php?id=<?php echo $res['id']?>" style="margin-top: 10px;" class="btn btn-large mt-3 btn-primary">View Details</a>
-
-								</form>
-							</div>
+						<div class="col-md-3">
+							<img style="width: 100%;" src="themes/images/<?php echo $res['images'] ?>" alt=""/>
 						</div>
-						<hr class="soft"/>
-					<?php } ?>
-
-				</div>
-
-
-
-				<div class="tab-pane  active" id="blockView">
-					<ul class="thumbnails">
-						<?php 
-						$result = select('product');
-						foreach ($result as $res) {
-
-
-							?>
-							<li class="span3">
-								<div class="thumbnail">
-									<a href="product_details.php?id=<?php echo $res['id']?>"><img src="themes/images/<?php echo $res['images'];?>" alt=""/></a>
-									<div class="caption">
-										<h5 style=" display: block;
-										display: -webkit-box;
-										-webkit-line-clamp: 3;
-										-webkit-box-orient: vertical;
-										overflow: hidden;
-										text-overflow: ellipsis;"><?php echo $res['name']; ?></h5>
-
-										<h4 style="text-align:center"> <a class="btn" href="#">Buy Now <i class="icon-shopping-cart"></i></a> 
-											<a class="btn btn-primary" href="#">&dollar;<?php echo $res['price']; ?></a></h4>
-										</div>
-									</div>
-								</li>
-								<?php 
-							}
-							?>
-						</ul>
-
-
-						<hr class="soft"/>
+						<div class="col-md-7 text-orange">
+							<h3>New | Available</h3>				
+							<hr class="soft"/>
+							<h5><?php echo $res['name']; ?> </h5>
+						</div>
+						<div class="span3 alignR ">
+							<h3 class="text-orange">$ <?php echo $res['price']; ?></h3>
+							<a class="btn  btn-large mt-3 bg-orange text-white" href="product.php?id=<?php echo $res['id']?>" style="margin-top: 10px; text-decoration:none;" >View Details</a>
+						</div>
 					</div>
-				</div>
+					
+					
+				<?php } ?>
 
 			</div>
 		</div>
 	</div>
 
 
+	<div class="container mt-5">
+		
+		<div class="row">
+			<?php 
+			$result = select('product');
+			foreach ($result as $res) {
 
 
+				?>
+				<div class="col-md-3">
+					<a class="" style="color:#ff6a00; text-decoration: none; " href="product.php?id=<?php echo $res['id']?>
+					">
+					<div class="">
+						<img class="w-100" src="themes/images/<?php echo $res['images'];?>" alt=""/>
+					</div>
 
-	<script src="themes/js/jquery.js" type="text/javascript"></script>
-	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="themes/js/google-code-prettify/prettify.js"></script>
+					<div class="caption">
+						<h5 class="products_title font">
+							<?php echo $res['name']; ?>
 
-	<script src="themes/js/bootshop.js"></script>
-	<script src="themes/js/jquery.lightbox-0.5.js"></script>
+						</h5>
+
+						<h4 class="products_price font py-2">
+							&dollar;<?php echo $res['price']; ?>
+
+						</h4>
+					</div>
+				</a>
+			</div>
+		<?php } ?>
+	</div>
+</div>
+</div>
+</div>
+<script>
+	function listView() {
+		var x = document.getElementById("listView");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+</script>
+<script src="themes/js/jquery.js" type="text/javascript"></script>
+<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="themes/js/google-code-prettify/prettify.js"></script>
+
+<script src="themes/js/bootshop.js"></script>
+<script src="themes/js/jquery.lightbox-0.5.js"></script>
 
 </body>
 </html>
