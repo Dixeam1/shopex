@@ -1,6 +1,7 @@
 	<?php include 'layout.php'; ?>
 	<?php
 	session_start();
+	$userid = $_Get['userid'];
 	if (empty(isset($_SESSION["email"]))) {
 		header("Location: dist/login.php");
 	}
@@ -50,7 +51,7 @@
 							$sql = "SELECT * FROM `product` INNER JOIN `cart` ON product.`id` = cart.`p_id`";
 							$sq = mysqli_query($conn, $sql);
 							$fetch = mysqli_fetch_all($sq, MYSQLI_ASSOC);
-							$result = select('cart');
+							$result = "SELECT * FROM `cart` WHERE userid = $userid";
 							$total_bill = 0;
 
 							foreach ($fetch as $res ) {
@@ -81,7 +82,7 @@
 								</td>
 								<td><?php echo $res['price']; ?></td>
 								<td><?php echo $total[0]; ?></td>
-								<td><a class="a " href="delete.php?id=<?php echo $res['id']?>"><i class=" fas fa-trash-alt text text-danger " style=" font-size: 25px;"></i></a></td>
+								<td><a class="a " href="deletecart.php?id=<?php echo $res['id']?>"><i class=" fas fa-trash-alt text text-danger " style=" font-size: 25px;"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>

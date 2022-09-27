@@ -414,6 +414,7 @@ include '../conn.php';
                     <table class="table table-striped mt-5" >
                       <thead class="bg-dark text-white">
                         <tr>
+                          <th>Sr #</th>
                           <th>Model Number</th>
                           <th>NAME</th>
                           <th>CATEGORY</th>
@@ -423,10 +424,12 @@ include '../conn.php';
                       </thead>
                       <tbody>
                         <?php
+                        $sr = 1;
                         $result = select("product");
                         foreach($result as $res){
                          ?>
                          <tr>
+                          <td><?php echo $sr++; ?></td>
                           <td><?php echo $res['product_id']; ?></td>
                           <td><?php echo $res['name']; ?></td>
                           

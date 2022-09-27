@@ -417,16 +417,19 @@ include '../conn.php';
                     <table class="table table-striped mt-5" >
                       <thead class="bg-dark text-white">
                         <tr>
+                          <th>sr #</th>
                           <th>Title</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php
+                        $sr = 1;
                         $result = select("category");
                         foreach($result as $res){
                          ?>
                          <tr>
+                          <td><?php echo $sr++; ?></td>
                           <td><?php echo $res['category']; ?></td>
                           <td>
                             <a href="delete.php?id=<?php echo $res['id']?>">Delete<i class=" fas fa-trash-alt text text-danger " style="font-size: 25px;"></i></a></td>

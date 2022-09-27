@@ -442,12 +442,20 @@ if (empty(isset($_SESSION["username"]))) {
                             <div class="bg-primary w-25 py-4 text-white font rounded">
 
                               <p class="statistics-title text-white text-center font">Total Earning</p>
-                              <h3 class="rate-percentage text-center text-white"><span>$</span> 10000</h3>
+
+                              <?php 
+                              $sum = "SELECT SUM(amount) as sum_amount FROM orders";
+                              $res = mysqli_query($conn, $sum);
+                              // print_r($res);
+                              $fetch = mysqli_fetch_all($res, MYSQLI_ASSOC);
+                              
+                              ?>
+                              <h3 class="rate-percentage text-center text-white"><span>$</span> <?php echo (number_format((float)$fetch[0]['sum_amount'], 2, '.', '')) ?></h3>
                             </div>
 
                             <div class="bg-primary w-25 py-4 text-white rounded">
                               <?php 
-                              // $result = select('order');
+                              $result = select('orders');
                               ?>
                               <p class="statistics-title text-center text-white font">Total Order</p>
                               <h3 class="rate-percentage text-center text-white"><?php echo count($result); ?></h3>

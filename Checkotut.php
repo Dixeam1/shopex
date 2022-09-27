@@ -109,7 +109,7 @@ $bill = $_GET['total'];
           <input required  type="text" id="city" name="city" placeholder="New York">
           <label for="Phone"> Phone</label>
           <input required  type="text" id="phone" name="phone" placeholder="03001234567">
-          <input type="text" name="amount" value="<?php echo $bill; ?>">
+          <input type="hidden" name="amount" value="<?php echo $bill; ?>">
 
           <div class="row">
             <div class="col-50">
@@ -122,7 +122,7 @@ $bill = $_GET['total'];
               <label for="state">Cash on Dilivery</label>
             </div>
             <div class="col-50">
-              <input  required type="radio"  name="amo_method" placeholder="10001">
+              <input  required type="radio"  name="amo_method" value="Bank Transfer" placeholder="10001">
               <label for="">Bank Transfer</label>
             </div>
           </div>
