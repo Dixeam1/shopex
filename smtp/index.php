@@ -1,6 +1,40 @@
 <?php
+include 'email_layout.php';
+include '../function.php';
+include '../conn.php';
 include('smtp/PHPMailerAutoload.php');
-$html='Hi how are you!';
+$result = select('orders');
+foreach ($result as $res) {
+	# code...
+}
+$html="
+
+
+<thead>
+<tr>
+<th>name</th>
+<th>email</th>
+<th>Sub Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<?php echo $res['name']; ?>
+</td>
+<td>
+<?php echo $res['name']; ?>
+
+</td>
+<td>
+<?php echo $res['name']; ?>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+";
 smtp_mailer('Ateeqrehman4344@gmail.com','subject',$html);
 function smtp_mailer($to,$subject, $msg){
 	$mail = new PHPMailer(); 
